@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
-import AppColors from "../utils/AppColors";
-import { height, width } from "../utils/Dimension";
+import { height, width } from "../../utils/Dimension";
+import AppColors from "../../utils/AppColors";
 
 
 const styles = StyleSheet.create({
