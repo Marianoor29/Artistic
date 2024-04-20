@@ -8,6 +8,9 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './styles';
 import { View } from 'react-native';
 import AppColors from '../utils/AppColors';
+import { useSelector } from 'react-redux';
+import { setIsLoggedIn } from '../redux/slice/user/userSlice';
+import Login from '../screens/auth/login';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -65,15 +68,28 @@ function MyTabs() {
 }
 
 const MainNavigation = () => {
+  const isLogin = useSelector(setIsLoggedIn)
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {!isLogin ? (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="HomeBase"
           options={{ headerShown: false }}
           component={MyTabs}
         />
       </Stack.Navigator>
+      ) : (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen
+          name="Login"
+          options={{ headerShown: false }}
+          component={Login}
+        />
+      </Stack.Navigator>
+      )
+    }
+      
     </NavigationContainer>
   );
 };
