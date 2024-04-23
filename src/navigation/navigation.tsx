@@ -5,11 +5,13 @@ import { useSelector } from 'react-redux';
 import { setIsLoggedIn } from '../redux/slice/user/userSlice';
 import Login from '../screens/auth/login';
 import MyTabs from './bottom';
+import ScreenNames from './routes';
 
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
   const isLogin = useSelector(setIsLoggedIn)
+  console.log(isLogin, 'logginnn')
   return (
     <NavigationContainer>
       {!isLogin ? (
@@ -20,14 +22,14 @@ const MainNavigation = () => {
           component={MyTabs}
         />
       </Stack.Navigator>
-      ) : (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+       ) : ( 
+         <Stack.Navigator screenOptions={{ headerShown: false }}> 
         <Stack.Screen
-          name="Login"
+          name={ScreenNames.LOGIN}
           options={{ headerShown: false }}
           component={Login}
         />
-      </Stack.Navigator>
+      </Stack.Navigator> 
       )
     }
       

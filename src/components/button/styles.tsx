@@ -6,7 +6,7 @@ export default StyleSheet.create({
     buttonStyle: {
         backgroundColor: AppColors.blue,
         paddingHorizontal: 40,
-        paddingVertical: 30,
+        paddingVertical: 15,
         borderRadius: 10,
     },
     text: { fontSize: width(5), color: AppColors.white, fontWeight: 'bold' },

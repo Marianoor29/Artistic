@@ -50,6 +50,7 @@ const InputField = React.forwardRef(({
             secureTextEntry={secureTextEntry}
             ref={ref}
             keyboardType={keyboardType}
+            
             />
         )}
         name={name}
@@ -62,7 +63,7 @@ const InputField = React.forwardRef(({
 )}
     </View>
     <View style={styles.errorView}>
-          <Text  style={styles.errorText} >{error ? error : null}</Text>
+          <Text  style={styles.errorText}>{error ? error : null}</Text>
         </View>
         </>
   )

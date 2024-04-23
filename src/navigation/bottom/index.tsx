@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Home, Profile } from '../../screens';
 import AppColors from '../../utils/AppColors';
 import styles from './styles';
+import ScreenNames from '../routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function MyTabs({navigation}: any) {
       headerShown: false,
       tabBarStyle: styles.tabBarStyle,
       tabBarIcon: ({ focused }: any) => {
-        if (route.name === "Home") {
+        if (route.name === ScreenNames.HOME) {
           return (
             <View style={styles.tabItemsStyle}>
               <View
@@ -34,7 +35,7 @@ export default function MyTabs({navigation}: any) {
             </View>
           );
         }
-        if (route.name === "Profile") {
+        if (route.name === ScreenNames.PROFILE) {
           return (
             <View style={styles.tabItemsStyle}>
               <View
@@ -55,8 +56,8 @@ export default function MyTabs({navigation}: any) {
     })}
     >
 
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name={ScreenNames.HOME} component={Home} />
+      <Tab.Screen name={ScreenNames.PROFILE} component={Profile} />
     </Tab.Navigator>
   );
 }
