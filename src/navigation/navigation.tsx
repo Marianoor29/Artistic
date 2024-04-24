@@ -10,29 +10,20 @@ import ScreenNames from './routes';
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
-  const isLogin = useSelector(setIsLoggedIn)
-  console.log(isLogin, 'logginnn')
   return (
     <NavigationContainer>
-      {!isLogin ? (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator  screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="HomeBase"
           options={{ headerShown: false }}
           component={MyTabs}
         />
-      </Stack.Navigator>
-       ) : ( 
-         <Stack.Navigator screenOptions={{ headerShown: false }}> 
-        <Stack.Screen
+          <Stack.Screen
           name={ScreenNames.LOGIN}
           options={{ headerShown: false }}
           component={Login}
         />
       </Stack.Navigator> 
-      )
-    }
-      
     </NavigationContainer>
   );
 };

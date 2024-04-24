@@ -19,9 +19,15 @@ const styles = StyleSheet.create({
     signupText:{
       fontSize:height(2),
       color:AppColors.blue,
-      marginTop:height(5)
-    
-    }
+      marginTop:height(5),
+      marginBottom:height(2)
+    },
+    animatedImageStyle: {
+      height: height(40),
+      width:width(60),
+      marginBottom:height(3)
+    },
+
    
 })
 

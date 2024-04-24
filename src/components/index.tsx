@@ -1,3 +1,7 @@
 export {default as Button} from './button'
 export {default as CustomText} from './customText'
 export {default as InputField} from './inputField'
+export {default as BottomIcons} from './bottomIcons'
+export {default as ScreenWrapper} from './screenWrapper'
+export {default as Header} from './header'
+export {default as Post} from './post'

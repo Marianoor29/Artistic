@@ -8,9 +8,9 @@ export interface userStage {
 }
 
 const initialState : userStage ={
-    token: 1,
-    isLoggedIn:true,
-    userMeta:'000', 
+    token: null,
+    isLoggedIn:false,
+    userMeta:null, 
 }
 
 export const userSlice = createSlice({
