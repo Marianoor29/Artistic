@@ -10,23 +10,43 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: AppColors.white,
     },
+    animatedImageStyle: {
+      height: width(60),
+      width:width(60),
+    },
     title:{
       fontSize:height(3),
-      color:AppColors.blue,
+      color:AppColors.black,
       fontWeight:'bold',
       marginBottom:height(4)
     },
-    signupText:{
+    forgortPass:{
       fontSize:height(2),
       color:AppColors.blue,
-      marginTop:height(5),
+      marginBottom:height(2),
+      alignSelf:'flex-end',
+      marginRight:width(4),
+      fontWeight:'bold'
+    },
+    signupText:{
+      fontSize:height(2),
+      color:AppColors.grey,
+      marginTop:height(2),
       marginBottom:height(2)
     },
-    animatedImageStyle: {
-      height: height(40),
-      width:width(60),
-      marginBottom:height(3)
+    socialBtnViewStyle:{
+      flexDirection:'row',
+      justifyContent:'space-between',
+      // width:width(50),
+      // alignSelf:'center'
     },
+    linkedIn:{
+      width:width(8),
+      height:width(8)
+    },
+    signUpButtonStyle:{
+      backgroundColor:AppColors.azure
+    }
 
    
 })

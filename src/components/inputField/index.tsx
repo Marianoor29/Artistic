@@ -62,7 +62,7 @@ const InputField = React.forwardRef(({
     </TouchableOpacity>
 )}
     </View>
-    <View style={styles.errorView}>
+        <View style={styles.errorView}>
           <Text  style={styles.errorText}>{error ? error : null}</Text>
         </View>
         </>

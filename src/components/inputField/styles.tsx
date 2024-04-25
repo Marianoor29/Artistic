@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: width(2.5),
         paddingVertical: height(1.3),
         borderRadius: height(0.5),
-        borderColor:AppColors.blue,
-        borderWidth:width(0.3)
+        borderColor:AppColors.grey,
+        borderWidth:width(0.3),
     },
     container: {
         backgroundColor: AppColors.white,
@@ -21,14 +21,15 @@ const styles = StyleSheet.create({
     },
     input: {
         width: width(68),
-        color: AppColors.blue,
+        color: AppColors.grey,
         fontSize: width(3.8),
         paddingTop: 0,
+        paddingBottom: 0
     },
     errorView: {
         alignSelf: 'flex-start',
-        paddingHorizontal: width(9),
-        marginBottom:height(1)
+        marginLeft:width(9),
+        marginVertical:height(0.5),
     },
     errorText: {
         fontSize: width(3),

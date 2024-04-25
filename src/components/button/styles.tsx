@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native";
 import AppColors from "../../utils/AppColors";
-import { width } from "../../utils/Dimension";
+import { height, width } from "../../utils/Dimension";
 
 export default StyleSheet.create({
     buttonStyle: {
         backgroundColor: AppColors.blue,
-        width:width(90),
+        width:width(80),
         alignItems:'center',
-        paddingVertical: 15,
-        borderRadius: 10,
+        paddingVertical:height(2),
+        borderRadius:width(8),
     },
     text: { 
         fontSize: width(5), 

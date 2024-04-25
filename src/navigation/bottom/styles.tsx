@@ -5,7 +5,7 @@ import AppColors from "../../utils/AppColors";
 
 const styles = StyleSheet.create({
     tabBarStyle:{
-        height: Platform.OS === "ios" ? height(12) : height(10.5),
+        height: Platform.OS === "ios" ? height(7) : height(8),
         backgroundColor: AppColors.blue,
         borderTopColor: AppColors.white,
         borderTopWidth: width(0.3),
@@ -26,6 +26,14 @@ const styles = StyleSheet.create({
         borderBottomEndRadius: width(5),
         borderBottomStartRadius: width(5),
       },
+      userImageStyle:{
+        width:width(7),
+        height:width(7),
+        borderRadius:width(9)
+      },
+      tabBage:{
+        
+      }
 })
 
 export default styles

@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import styles from './styles'
-import { BottomIcons, Button, InputField, ScreenWrapper } from '../../../components'
+import { BottomIcons, Button, InputField, ScreenWrapper, SocialButton } from '../../../components'
 import AppColors from '../../../utils/AppColors'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -11,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import LottieView from 'lottie-react-native';
 import { facebook, google, linkedin } from '../../../assets/images'
 import ScreenNames from '../../../navigation/routes'
+import { width } from '../../../utils/Dimension'
 
 type FormValues = {
   email: string,
@@ -56,34 +57,43 @@ const Login = ({ navigation }: any) => {
             control={control}
             name={"email"}
             keyboardType="email-address"
-            icon={<AntDesign name={'user'} size={30} color={AppColors.blue} />}
+            icon={<AntDesign name={'user'} size={width(7)} color={AppColors.grey} />}
             error={errors?.email?.message}
           />
           <InputField
             placeholder='Enter a Password'
             control={control}
             name={"password"}
-            icon={<MaterialCommunityIcons name={'form-textbox-password'} size={30} color={AppColors.blue} />}
+            icon={<MaterialCommunityIcons name={'form-textbox-password'} size={width(7)} color={AppColors.grey} />}
             error={errors?.password?.message}
             secureTextEntry={securePassword}
             rightSideIcon={securePassword ?
-              <MaterialCommunityIcons name={'eye-outline'} size={30} color={AppColors.blue} /> :
-              <MaterialCommunityIcons name={'eye-off'} size={30} color={AppColors.blue} />
+              <MaterialCommunityIcons name={'eye-outline'} size={width(7)} color={AppColors.grey} /> :
+              <MaterialCommunityIcons name={'eye-off'} size={width(7)} color={AppColors.grey} />
             }
             onPressRightIcon={() => setSecurePassword(!securePassword)}
           />
+          <Text style={styles.forgortPass} >Forgot Password?</Text>
           <Button
-            onPress={handleSubmit(navigation.navigate(ScreenNames.HOME))}
+            // onPress={handleSubmit(navigation.navigate(ScreenNames.HOME))}
+
             text={'Login'}
             disabled={!isValid}
           />
-
+          <Text style={styles.signupText}> or login with</Text>
+        
+           <View style={styles.socialBtnViewStyle}>
+              <SocialButton source={facebook} />
+              <SocialButton source={google} />
+              <SocialButton source={linkedin} iconStyle={styles.linkedIn} />
+            </View>
           <Text style={styles.signupText}> Don't have an account</Text>
-          <BottomIcons
-            icon1={facebook}
-            icon2={google}
-            icon3={linkedin}
-          />
+          <Button
+            onPress={handleSubmit(navigation.navigate(ScreenNames.HOME))}
+            text={'Login'}
+            buttonStyle={styles.signUpButtonStyle}
+            textStyle={{color: AppColors.grey}}
+            />
         </View>
     </ScreenWrapper>
   )

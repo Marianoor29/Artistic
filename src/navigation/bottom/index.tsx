@@ -1,12 +1,14 @@
-import { View } from 'react-native'
+import { Image, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { Home, Profile } from '../../screens';
+import { Cart, Home, Profile } from '../../screens';
 import AppColors from '../../utils/AppColors';
 import styles from './styles';
 import ScreenNames from '../routes';
+import { width } from '../../utils/Dimension';
+import { user } from '../../assets/images';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +33,7 @@ export default function MyTabs({navigation}: any) {
                   },
                 ]}
               />
-              <Icon name={'home-outline'} size={30} color={focused ? AppColors.darkblue : AppColors.white} />
+              <Icon name={'home-outline'} size={width(6)} color={focused ? AppColors.darkblue : AppColors.white} />
             </View>
           );
         }
@@ -48,7 +50,27 @@ export default function MyTabs({navigation}: any) {
                   },
                 ]}
               />
-              <AntDesign name={'profile'} size={30} color={focused ? AppColors.darkblue : AppColors.white} />
+              <Image source={user} style={[styles.userImageStyle, 
+                    {opacity: ( focused
+                    ? 1
+                    : 0.5) }]} />
+            </View>
+          );
+        }
+        if (route.name === ScreenNames.CART) {
+          return (
+            <View style={styles.tabItemsStyle}>
+              <View
+                style={[
+                  styles.bottomTabIndicator,
+                  {
+                    backgroundColor: focused
+                      ? AppColors.darkblue
+                      : AppColors.transparent,
+                  },
+                ]}
+              />
+              <AntDesign name={'shoppingcart'} size={width(6)} color={focused ? AppColors.darkblue : AppColors.white} />
             </View>
           );
         }
@@ -58,6 +80,8 @@ export default function MyTabs({navigation}: any) {
 
       <Tab.Screen name={ScreenNames.HOME} component={Home} />
       <Tab.Screen name={ScreenNames.PROFILE} component={Profile} />
+      <Tab.Screen name={ScreenNames.CART} component={Cart} 
+      options={{ tabBarBadge: 3}}  />
     </Tab.Navigator>
   );
 }
