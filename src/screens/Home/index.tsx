@@ -1,15 +1,12 @@
 import React from 'react';
 import {
-  SafeAreaView,
   View,
-  StatusBar,
-  Text,
   FlatList,
+  Text,
 } from 'react-native';
 import styles from './styles';
-import { Button, CreatePost, CustomText, Header, PopularArtist, Post, ScreenWrapper } from '../../components';
+import { CreatePost, Header, PopularArtist, Post, ScreenWrapper } from '../../components';
 import AppColors from '../../utils/AppColors';
-import ScreenNames from '../../navigation/routes';
 import { logo, postPicture, user } from '../../assets/images';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -41,8 +38,15 @@ const Home = ({ navigation }: any) => {
         />
       )}>
       <View style={styles.container}>
-        {/* <Text style={styles.topTitle}>Popular Artist</Text> */}
-        <FlatList
+        <View style={styles.sellerView}>
+          <View style={styles.topTitleView}>
+        <Text style={styles.topTitle}>Top Sellers</Text>
+        </View>
+        <View style={styles.topproductView}>
+        <Text style={styles.topproductTitle}>Top Products</Text>
+        </View>
+            </View>
+            <FlatList
            horizontal
               data={artistData}
               renderItem={renderItems}

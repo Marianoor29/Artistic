@@ -16,8 +16,7 @@ const PopularArtist = ({
             <View style={styles.imageContainer}>
                 <Image source={source} style={styles.userImage}/>
             </View>
-            <View style={styles.ShadowView}></View>
-            <Text style={styles.artistName}>{artistName}</Text>
+            <Text style={styles.artistName} numberOfLines={1}>{artistName}</Text>
         </View>
     )
 }

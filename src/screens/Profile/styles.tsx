@@ -82,6 +82,11 @@ export default StyleSheet.create({
     width: width(84),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: height(1)
+    marginVertical: height(1),
+    alignItems:'center',
+    alignSelf:'center'
+  },
+  productContainer:{
+    alignItems:'center'
   },
 });

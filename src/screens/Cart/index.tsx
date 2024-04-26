@@ -1,30 +1,55 @@
 import React from 'react';
 import {
-  SafeAreaView,
   View,
-  StatusBar,
+  Text,
 } from 'react-native';
 import styles from './styles';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { CustomText } from '../../components'
-import { userData } from '../../utils/DummyData';
+import { logo, } from '../../assets/images';
 import AppColors from '../../utils/AppColors';
+import { Button, CartItemBox, Header, ScreenWrapper } from '../../components';
+import Feather from 'react-native-vector-icons/Feather'
+import { width } from '../../utils/Dimension';
+import { cartList } from '../../utils/DummyData';
 
 const Cart = ({ navigation }: any) => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" backgroundColor={'#f9f9f9'} />
-      <SafeAreaView style={styles.SafeAreaView}>
-        <View style={styles.container}>
-          <FontAwesome name={'user-circle-o'} size={100} color={AppColors.blue} />
-          <CustomText text={userData?.name} />
-          <CustomText text={userData?.address} />
-          <CustomText text={userData?.education} />
-          <CustomText text={userData?.jobTitle} />
+    <ScreenWrapper
+      scrollEnabled
+      statusBarColor={AppColors.blue}
+      barStyle='light-content'
+      headerUnScrollable={() => (
+        <Header
+          source={logo}
+          icon2={<Feather name='settings' color={AppColors.white} size={width(5)}/> }
+        />
+      )}
+      footerUnScrollable={() => (
+        <View style={styles.bottomContainer}>
+        <View style={styles.totalAmountView}>
+        <Text style={styles.totalText}>Total</Text>
+        <Text style={styles.totalPriceText}>$470</Text>
         </View>
-
-      </SafeAreaView>
-    </>
+        <Button text={'Check Out'} />
+        </View>
+      )}
+      >
+          <View style={styles.container}>
+            <Text style={styles.topTitleText}>Shopping Cart</Text>
+            {cartList.map((item, key) => {
+              return(
+                <CartItemBox 
+                key={key}
+                source={item.source}
+                itemName={item.itemName}
+                price={item.price}
+                counter={item.counter}
+                />
+              )
+            })}
+           
+         
+          </View>
+        </ScreenWrapper>
   );
 };
 

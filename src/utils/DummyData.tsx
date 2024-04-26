@@ -1,4 +1,5 @@
 import { postPicture, user, user1, user2 } from "../assets/images"
+import AppColors from "./AppColors"
 
 export const userData = 
   {
@@ -102,4 +103,83 @@ export const galleryData =[
     title:'Original artworks for sale',
     price:'$200'
   },
+]
+
+export const categoryList = [
+  {
+    source:'https://carolineashwood.co.uk/cdn/shop/files/new-lenny-original-abstract-wall-art-39533093814518_2000x.jpg?v=1701705107',
+    categoryName:'Paintings',
+    numberOfItems:'1500 items',
+  },
+  {
+    source:'https://cdn.shopify.com/s/files/1/0036/8757/9760/files/82.jpg?v=1604230225',
+    categoryName:'Abstract art',
+    numberOfItems:'1600 items',
+  },
+  {
+    source:'https://i.redd.it/djh0glv80bua1.jpg',
+    categoryName:'Drawings',
+    numberOfItems:'1100 items',
+  },
+  {
+    source:'https://static.vecteezy.com/system/resources/thumbnails/000/225/241/small_2x/hand-gesture-modern-pop-art-vector.jpg',
+    categoryName:'Pop Art',
+    numberOfItems:'1300 items',
+  },
+  {
+    source:'https://animationworkshop.via.dk/-/media/taw-v2/programmes-and-courses/bachelor-programmes/images/computer-graphic-arts/fayburrow-960x480-v2.jpg',
+    categoryName:'Computer art',
+    numberOfItems:'900 items',
+  },
+]
+
+export const offersList =[
+  {
+    key:1,
+    source:'https://cdn.shopify.com/s/files/1/0036/8757/9760/files/82.jpg?v=1604230225',
+    title:'Best Spring Offer',
+    subTitle:'Abstract art',
+    number:'30',
+    backgroundColor:AppColors.chocolate
+  },
+  {
+    key:2,
+    source:'https://animationworkshop.via.dk/-/media/taw-v2/programmes-and-courses/bachelor-programmes/images/computer-graphic-arts/fayburrow-960x480-v2.jpg',
+    title:'Best Spring Offer',
+    subTitle:'Computer art',
+    number:'20',
+    backgroundColor:AppColors.cornflowerblue
+  },
+  {
+    key:3,
+    source:'https://i.redd.it/djh0glv80bua1.jpg',
+    title:'Best Spring Offer',
+    subTitle:'Drawing art',
+    number:'40',
+    backgroundColor:AppColors.greenyellow
+  },
+]
+export const cartList = [
+  {
+    key:1,
+    source:'https://cdn.shopify.com/s/files/1/0036/8757/9760/files/82.jpg?v=1604230225',
+    itemName:'Abstract Art',
+    price:'$200',
+    counter:'1'
+  },
+  {
+    key:2,
+    source:'https://i.redd.it/djh0glv80bua1.jpg',
+    itemName:'Drawing art',
+    price:'$140',
+    counter:'2'
+  },
+  {
+    key:3,
+    source:'https://static.vecteezy.com/system/resources/thumbnails/000/225/241/small_2x/hand-gesture-modern-pop-art-vector.jpg',
+    itemName:'Pop Art',
+    price:'$230',
+    counter:'1'
+  },
+
 ]

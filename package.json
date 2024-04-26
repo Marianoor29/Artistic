@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeBoilerPlate",
+  "name": "Artistic",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,7 +12,6 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@react-native-async-storage/async-storage": "^1.23.1",
-    "@react-native-masked-view/masked-view": "^0.3.1",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/material-top-tabs": "^6.6.5",
     "@react-navigation/native": "^6.1.9",
@@ -23,7 +22,7 @@
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
     "react-hook-form": "^7.51.3",
-    "react-native": "0.73.1",
+    "react-native": "0.72.13",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-pager-view": "^6.2.3",
