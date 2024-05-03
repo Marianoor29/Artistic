@@ -1,5 +1,5 @@
 import React from "react";
-import { View,  Image } from "react-native";
+import { View,  Image, Pressable } from "react-native";
 import styles from "./styles";
 
 type headerProps ={
@@ -9,6 +9,9 @@ type headerProps ={
   icon1?: any,
   icon2?: any,
   firstIcon?: any,
+  onPressFirstIcon?: () => void,
+  onPressFirstIcon1?: () => void,
+  onPressFirstIcon2?: () => void,
 }
 const Header = ({
  source,
@@ -16,21 +19,24 @@ const Header = ({
  icon1,
  icon2,
  firstIcon,
- iconView = true
+ iconView = true,
+ onPressFirstIcon = () => null,
+ onPressFirstIcon1 = () => null,
+ onPressFirstIcon2 = () => null,
 }: headerProps) => {
   return (
     <View style={[styles.container, container]}>
-      <View style={styles.emptyView}>
+      <Pressable onPress={onPressFirstIcon} style={styles.emptyView}>
         {firstIcon}
-      </View>
+      </Pressable>
     <Image source={source} style={styles.logo} />
     {iconView && (
       <View style={styles.iconView}>
-      {icon1}
-      {icon2}
+        <Pressable onPress={onPressFirstIcon1}>{icon1}</Pressable>
+        <Pressable onPress={onPressFirstIcon2}>{icon2}</Pressable>
       </View>
     ) }
-   
+  
     </View>
   );
 };

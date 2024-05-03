@@ -1,15 +1,13 @@
 import React from 'react';
 import {View,Text,FlatList} from 'react-native';
 import styles from './styles';
-import { Button, GalleryCard, Header, ScreenWrapper } from '../../components'
+import { Button, GalleryCard, Header, ScreenWrapper } from '../../../components'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import AppColors from '../../utils/AppColors';
-import { logo, user, user1 } from '../../assets/images';
-import { width } from '../../utils/Dimension';
 import { Image } from 'react-native';
-import { galleryData } from '../../utils/DummyData';
-
+import AppColors from '../../../utils/AppColors';
+import { width } from '../../../utils/Dimension';
+import { logo, user } from '../../../assets/images';
+import {galleryData} from '../../../utils/DummyData'
 
 const Profile = ({ navigation }: any) => {
   const renderGalleryItem = ({ item }: any) => {

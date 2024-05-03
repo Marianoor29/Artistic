@@ -1,42 +1,26 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 import styles from './styles'
-import { BottomIcons, Button, InputField, ScreenWrapper, SocialButton } from '../../../components'
+import { Button, InputField, ScreenWrapper } from '../../../components'
 import AppColors from '../../../utils/AppColors'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useForm } from "react-hook-form";
-import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
 import LottieView from 'lottie-react-native';
-import { facebook, google, linkedin } from '../../../assets/images'
+import { userSchema } from '../../../utils/validationSchemas'
 import ScreenNames from '../../../navigation/routes'
 import { width } from '../../../utils/Dimension'
-import { userLoginSchema } from '../../../utils/validationSchemas'
-import { useDispatch } from 'react-redux'
-import {UserState, loginUser } from '../../../redux/slice/user/userSlice';
-import { setAppLoader } from '../../../redux/slice/config/configSlice'
 
 type FormValues = {
   email: string,
   password: any,
+  ConfirmPassword: any,
 }
 
-const Login = ({ navigation }: any) => {
-  const dispatch = useDispatch();
-  const userData: UserState = {
-    token: '001122',
-    userMeta: { /* user metadata */ },
-    isLoggedIn: true
-};
-  const logInMethod = () => {
-    dispatch(setAppLoader(true))
-    console.log('true')
-    dispatch(loginUser(userData));
-    dispatch(setAppLoader(false))
-    console.log('false')
-  };
+const SignUp = ({ navigation }: any) => {
   const [securePassword, setSecurePassword] = useState(true)
+  const [secureConfirmPassword, setSecureConfirmPassword] = useState(true)
   const {
     control,
     handleSubmit,
@@ -46,8 +30,9 @@ const Login = ({ navigation }: any) => {
     defaultValues: {
       email: "john@doe.com",
       password: "12345678",
+      ConfirmPassword: "12345678",
     },
-    resolver: yupResolver(userLoginSchema),
+    resolver: yupResolver(userSchema),
   });
 
   return (
@@ -57,7 +42,7 @@ const Login = ({ navigation }: any) => {
       barStyle='dark-content'>
         <View style={styles.container}>
           <LottieView source={require('../../../assets/gif/login.json')} style={styles.animatedImageStyle} autoPlay loop />
-          <Text style={styles.title}> Log in to your account</Text>
+          <Text style={styles.title}> Register your account</Text>
           <InputField
             placeholder='Enter a Name'
             control={control}
@@ -79,23 +64,29 @@ const Login = ({ navigation }: any) => {
             }
             onPressRightIcon={() => setSecurePassword(!securePassword)}
           />
+           <InputField
+            placeholder='Confirm your Password'
+            control={control}
+            name={"ConfirmPassword"}
+            icon={<MaterialCommunityIcons name={'form-textbox-password'} size={width(7)} color={AppColors.grey} />}
+            error={errors?.ConfirmPassword?.message}
+            secureTextEntry={securePassword}
+            rightSideIcon={securePassword ?
+              <MaterialCommunityIcons name={'eye-outline'} size={width(7)} color={AppColors.grey} /> :
+              <MaterialCommunityIcons name={'eye-off'} size={width(7)} color={AppColors.grey} />
+            }
+            onPressRightIcon={() => setSecureConfirmPassword(!secureConfirmPassword)}
+          />
           <Button
-            onPress={handleSubmit(logInMethod)}
+            // onPress={handleSubmit(navigation.navigate(ScreenNames.HOME))}
 
-            text={'Login'}
+            text={'Register'}
             disabled={!isValid}
           />
-          <Text style={styles.signupText}> or login with</Text>
-        
-           <View style={styles.socialBtnViewStyle}>
-              <SocialButton source={facebook} />
-              <SocialButton source={google} />
-              <SocialButton source={linkedin} iconStyle={styles.linkedIn} />
-            </View>
-          <Text style={styles.signupText}> Don't have an account</Text>
+           <Text style={styles.signupText}> Already have an account</Text>
           <Button
-            onPress={() => navigation.navigate(ScreenNames.SIGNUP)}
-            text={'SignUp'}
+            onPress={() => navigation.navigate(ScreenNames.LOGIN)}
+            text={'Login'}
             buttonStyle={styles.signUpButtonStyle}
             textStyle={{color: AppColors.grey}}
             />
@@ -104,4 +95,4 @@ const Login = ({ navigation }: any) => {
   )
 }
 
-export default Login
+export default SignUp

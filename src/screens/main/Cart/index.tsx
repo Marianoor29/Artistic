@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
 } from 'react-native';
 import styles from './styles';
-import { logo, } from '../../assets/images';
-import AppColors from '../../utils/AppColors';
-import { Button, CartItemBox, Header, ScreenWrapper } from '../../components';
+import { logo, } from '../../../assets/images';
+import AppColors from '../../../utils/AppColors';
+import { Button, CartItemBox, Header, ScreenWrapper } from '../../../components';
 import Feather from 'react-native-vector-icons/Feather'
-import { width } from '../../utils/Dimension';
-import { cartList } from '../../utils/DummyData';
+import { width } from '../../../utils/Dimension';
+import { cartList } from '../../../utils/DummyData';
+import { useDispatch } from 'react-redux';
+import {logoutUser } from '../../../redux/slice/user/userSlice';
+import ScreenNames from '../../../navigation/routes';
+import { setAppLoader } from '../../../redux/slice/config/configSlice';
 
 const Cart = ({ navigation }: any) => {
+  const dispatch = useDispatch();
+  const logOutMethod = () => {
+    dispatch(setAppLoader(true))
+    console.log('true')
+    dispatch(logoutUser());
+    console.log(logoutUser().payload, 'logoutUser()')
+    dispatch(setAppLoader(false))
+    console.log('false')
+  };
   return (
     <ScreenWrapper
       scrollEnabled
@@ -20,7 +33,9 @@ const Cart = ({ navigation }: any) => {
       headerUnScrollable={() => (
         <Header
           source={logo}
-          icon2={<Feather name='settings' color={AppColors.white} size={width(5)}/> }
+          icon1={<Feather name='settings' color={AppColors.white} size={width(5)}/> }
+          icon2={<Feather name='log-out' color={AppColors.white} size={width(5)}/> }
+          onPressFirstIcon2={logOutMethod}
         />
       )}
       footerUnScrollable={() => (

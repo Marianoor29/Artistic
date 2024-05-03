@@ -7,11 +7,11 @@ import {
 import styles from './styles';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { CategoryBox, GalleryCard, Header, ScreenWrapper, TopProductCard } from '../../components'
-import AppColors from '../../utils/AppColors';
-import { logo } from '../../assets/images';
-import { width } from '../../utils/Dimension';
-import { categoryList, galleryData, offersList } from '../../utils/DummyData';
+import { CategoryBox, GalleryCard, Header, ScreenWrapper, TopProductCard } from '../../../components'
+import AppColors from '../../../utils/AppColors';
+import { logo } from '../../../assets/images';
+import { width } from '../../../utils/Dimension';
+import { categoryList, galleryData, offersList } from '../../../utils/DummyData';
 
 const Categories = ({ navigation }: any) => {
   const renderItems =({item}: any) => {

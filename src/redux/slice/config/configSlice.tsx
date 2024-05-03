@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface configState {
-    appLoader: boolean
+    appLoader: boolean | undefined
   }
 
 const initialState : configState = {

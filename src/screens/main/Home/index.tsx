@@ -5,13 +5,13 @@ import {
   Text,
 } from 'react-native';
 import styles from './styles';
-import { CreatePost, Header, PopularArtist, Post, ScreenWrapper } from '../../components';
-import AppColors from '../../utils/AppColors';
-import { logo, postPicture, user } from '../../assets/images';
+import { CreatePost, Header, PopularArtist, Post, ScreenWrapper } from '../../../components';
+import AppColors from '../../../utils/AppColors';
+import { logo, postPicture, user } from '../../../assets/images';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { width } from '../../utils/Dimension';
-import { artistData, postData } from '../../utils/DummyData';
+import { width } from '../../../utils/Dimension';
+import { artistData, postData } from '../../../utils/DummyData';
 
 
 const Home = ({ navigation }: any) => {

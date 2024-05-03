@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Cart, Categories, Home, Profile } from '../../screens';
+import { Cart, Categories, Home, Profile } from '../../screens/main';
 import AppColors from '../../utils/AppColors';
 import styles from './styles';
 import ScreenNames from '../routes';
