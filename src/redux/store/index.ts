@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import configSlice from '../slice/config/configSlice'
+import loaderSlice from '../slice/config/loaderSlice'
 import userSlice from '../slice/user/userSlice'
 
 export const store = configureStore({
   reducer: {
-    config: configSlice,
+    loader: loaderSlice,
     user: userSlice,
   },
 })

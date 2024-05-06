@@ -4,9 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import MyTabs from './bottom';
 import ScreenNames from './routes';
 import { Login, SignUp } from '../screens/auth';
-import { loginUser } from '../redux/slice/user/userSlice';
+import { useAppSelector} from '../redux/store/hook'
 import { Loader } from '../components';
-import { useAppSelector, useAppDispatch } from '../redux/store/hook'
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +14,7 @@ const MainNavigation = () => {
   console.log(isLoggedIn, 'isLoggedIn')
   return (
     <NavigationContainer>
+      <Loader />
       {!isLoggedIn ? (
         <Stack.Navigator
           initialRouteName={ScreenNames.LOGIN}

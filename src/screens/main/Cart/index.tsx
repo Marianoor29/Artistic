@@ -10,12 +10,18 @@ import { Button, CartItemBox, Header, ScreenWrapper } from '../../../components'
 import Feather from 'react-native-vector-icons/Feather'
 import { width } from '../../../utils/Dimension';
 import { cartList } from '../../../utils/DummyData';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../../redux/store/hook';
+import { loginUser } from '../../../redux/slice/user/userSlice';
+import { setAppLoader } from '../../../redux/slice/config/loaderSlice';
 
 const Cart = ({ navigation }: any) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch()
   const logOutMethod = () => {
-
+    dispatch(setAppLoader(true))
+    setTimeout(() => {
+      dispatch(loginUser(false))
+      dispatch(setAppLoader(false))
+    }, 600);
   };
   return (
     <ScreenWrapper

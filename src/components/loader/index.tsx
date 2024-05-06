@@ -1,26 +1,20 @@
 import React from "react"
 import { Text, ActivityIndicator, View } from "react-native"
 import styles from "./styles";
-import { useSelector } from "react-redux";
-import { setAppLoader } from "../../redux/slice/config/configSlice";
 import ReactNativeModal from "react-native-modal";
 import AppColors from "../../utils/AppColors";
+import { useAppSelector} from '../../redux/store/hook'
 
-type ButtonProps = {
-
-}
-
-const Loader = ({
-}: ButtonProps) => {
-    const appLoader = useSelector(setAppLoader);
-    console.log('ddddd', appLoader, 'ffff')
+const Loader = () => {
+  const isLoader = useAppSelector((state) => state.loader.setLoader)
+  console.log(isLoader, 'isLoader')
     return (
         <ReactNativeModal
         animationInTiming={300}
         animationOutTiming={200}
         animationIn={'lightSpeedIn'}
         animationOut={'lightSpeedOut'}
-        isVisible={appLoader.payload}
+        isVisible={isLoader}
         backdropOpacity={0.4}>
         <View style={styles.container}>
           <ActivityIndicator size="small" color={AppColors.black} />

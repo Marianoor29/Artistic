@@ -13,23 +13,23 @@ import { facebook, google, linkedin } from '../../../assets/images'
 import ScreenNames from '../../../navigation/routes'
 import { width } from '../../../utils/Dimension'
 import { userLoginSchema } from '../../../utils/validationSchemas'
-import { useDispatch } from 'react-redux'
-import {UserState, loginUser } from '../../../redux/slice/user/userSlice';
-import { setAppLoader } from '../../../redux/slice/config/configSlice'
-
+import { useAppSelector, useAppDispatch } from '../../../redux/store/hook'
+import { loginUser } from '../../../redux/slice/user/userSlice'
+import { setAppLoader } from '../../../redux/slice/config/loaderSlice'
 type FormValues = {
   email: string,
   password: any,
 }
 
 const Login = ({ navigation }: any) => {
-  const dispatch = useDispatch();
-
+  const dispatch = useAppDispatch()
   const logInMethod = () => {
     dispatch(setAppLoader(true))
+    console.log('loader true')
     setTimeout(() => {
-      dispatch(loginUser(true));
+      dispatch(loginUser(true))
       dispatch(setAppLoader(false))
+      console.log('loader false')
     }, 600);
   };
   const [securePassword, setSecurePassword] = useState(true)
