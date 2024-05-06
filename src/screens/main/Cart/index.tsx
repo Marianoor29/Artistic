@@ -11,19 +11,11 @@ import Feather from 'react-native-vector-icons/Feather'
 import { width } from '../../../utils/Dimension';
 import { cartList } from '../../../utils/DummyData';
 import { useDispatch } from 'react-redux';
-import {logoutUser } from '../../../redux/slice/user/userSlice';
-import ScreenNames from '../../../navigation/routes';
-import { setAppLoader } from '../../../redux/slice/config/configSlice';
 
 const Cart = ({ navigation }: any) => {
   const dispatch = useDispatch();
   const logOutMethod = () => {
-    dispatch(setAppLoader(true))
-    console.log('true')
-    dispatch(logoutUser());
-    console.log(logoutUser().payload, 'logoutUser()')
-    dispatch(setAppLoader(false))
-    console.log('false')
+
   };
   return (
     <ScreenWrapper

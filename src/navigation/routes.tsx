@@ -6,6 +6,7 @@ LOGIN: 'Login',
 SIGNUP: 'SignUp',
 CART: 'Cart',
 CATEGORIES: 'Categories',
+HOMEBASE: 'HomeBase'
 }
 
 export default ScreenNames;

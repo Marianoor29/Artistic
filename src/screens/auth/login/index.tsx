@@ -24,17 +24,13 @@ type FormValues = {
 
 const Login = ({ navigation }: any) => {
   const dispatch = useDispatch();
-  const userData: UserState = {
-    token: '001122',
-    userMeta: { /* user metadata */ },
-    isLoggedIn: true
-};
+
   const logInMethod = () => {
     dispatch(setAppLoader(true))
-    console.log('true')
-    dispatch(loginUser(userData));
-    dispatch(setAppLoader(false))
-    console.log('false')
+    setTimeout(() => {
+      dispatch(loginUser(true));
+      dispatch(setAppLoader(false))
+    }, 600);
   };
   const [securePassword, setSecurePassword] = useState(true)
   const {
@@ -81,7 +77,6 @@ const Login = ({ navigation }: any) => {
           />
           <Button
             onPress={handleSubmit(logInMethod)}
-
             text={'Login'}
             disabled={!isValid}
           />

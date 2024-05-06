@@ -1,23 +1,21 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { useSelector } from 'react-redux';
 import MyTabs from './bottom';
 import ScreenNames from './routes';
 import { Login, SignUp } from '../screens/auth';
-import { RootState } from '../redux/store';
-import { UserState } from '../redux/slice/user/userSlice';
+import { loginUser } from '../redux/slice/user/userSlice';
 import { Loader } from '../components';
+import { useAppSelector, useAppDispatch } from '../redux/store/hook'
 
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
-  const userData: UserState = useSelector((state: RootState) => state.user);
-  console.log(userData)
+  const isLoggedIn = useAppSelector((state) => state.user.isLoggedIn)
+  console.log(isLoggedIn, 'isLoggedIn')
   return (
     <NavigationContainer>
-      <Loader />
-      {userData ? (
+      {!isLoggedIn ? (
         <Stack.Navigator
           initialRouteName={ScreenNames.LOGIN}
           screenOptions={{ headerShown: false }}>
@@ -31,17 +29,17 @@ const MainNavigation = () => {
             options={{ headerShown: false }}
             component={SignUp}
           />
-        </Stack.Navigator>
+        </Stack.Navigator> 
       ) : (
         <Stack.Navigator
-          screenOptions={{ headerShown: false }}>
+          screenOptions={{ headerShown: false }}> 
           <Stack.Screen
-            name="HomeBase"
+            name={ScreenNames.HOMEBASE}
             options={{ headerShown: false }}
             component={MyTabs}
           />
         </Stack.Navigator>
-      )}
+      )} 
 
     </NavigationContainer>
   );

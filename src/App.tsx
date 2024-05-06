@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import MainNavigation from './navigation/navigation';
 import { Provider } from 'react-redux'
-import { store } from './redux/store';
+import { store }  from './redux/store';
 
 const App = () => {
   return (
