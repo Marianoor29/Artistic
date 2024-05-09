@@ -24,7 +24,7 @@ const Button = ({
             style={[styles.buttonStyle, buttonStyle]}
             onPress={onPress}
             disabled={disabled || isLoading}
-            >
+            activeOpacity={0.7}>
             <Text style={[styles.text, textStyle]}>{text}</Text>
         </TouchableOpacity>
     )
