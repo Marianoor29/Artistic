@@ -27,7 +27,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
-  title: string,
+  title: string;
 }>;
 
 function Section({ children, title }: SectionProps): React.JSX.Element {
@@ -38,7 +38,7 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
         style={[
           styles.sectionTitle,
           {
-            color: isDarkMode ? Colors.black : Colors.black,
+            color: isDarkMode ? Colors.white : Colors.black,
           },
         ]}>
         {title}
@@ -75,7 +75,7 @@ function App(): React.JSX.Element {
         <Header />
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.black,
+            backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Icon name={'alarm-outline'} size={100} color={'green'} />
           <Icon name={'airplane-outline'} size={100} color={'purple'} />

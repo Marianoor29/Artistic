@@ -7,32 +7,32 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: AppColors.black,
+    backgroundColor: AppColors.white,
   },
-  topTitleText: {
-    fontSize: width(4),
-    color: AppColors.black,
-    fontWeight: 'bold',
-    marginTop: height(1),
+  topTitleText:{
+    fontSize:width(4),
+    color:AppColors.black,
+    fontWeight:'bold',
+    marginTop:height(1)
   },
-  totalAmountView: {
-    width: width(40),
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginBottom: height(2),
+  totalAmountView:{
+    width:width(40),
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    marginBottom:height(2),
   },
-  totalText: {
-    fontSize: width(4),
-    color: AppColors.grey,
-    fontWeight: 'bold',
+  totalText:{
+    fontSize:width(4),
+    color:AppColors.grey,
+    fontWeight:'bold',
   },
-  totalPriceText: {
-    fontSize: width(4),
-    color: AppColors.black,
-    fontWeight: 'bold',
+  totalPriceText:{
+    fontSize:width(4),
+    color:AppColors.black,
+    fontWeight:'bold',
   },
-  bottomContainer: {
-    alignItems: 'center',
-    marginVertical: height(2),
-  },
+  bottomContainer:{
+    alignItems:'center',
+    marginVertical:height(2)
+  }
 });

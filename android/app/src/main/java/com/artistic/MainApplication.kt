@@ -1,4 +1,4 @@
-package com.Offerboats
+package com.artistic
 
 import android.app.Application
 import com.facebook.react.PackageList

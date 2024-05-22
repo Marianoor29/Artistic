@@ -3,38 +3,39 @@ import AppColors from '../../../utils/AppColors';
 import { height, width } from '../../../utils/Dimension';
 
 export default StyleSheet.create({
-  SafeAreaView: { flex: 1, backgroundColor: AppColors.black },
+  SafeAreaView: { flex: 1, backgroundColor: AppColors.white },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: AppColors.black,
+    backgroundColor: AppColors.white,
   },
   topGalleryView: {
     width: width(84),
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: height(1),
-    alignSelf: 'center',
+    alignSelf:'center'
   },
   galleryText: {
     fontSize: width(4),
     color: AppColors.black,
-    fontWeight: 'bold',
+    fontWeight:'bold'
   },
   seeAllText: {
     fontSize: width(3),
-    color: AppColors.grey,
+    color: AppColors.grey
   },
-  statusRawContainer: {
-    flexDirection: 'row',
-    marginHorizontal: width(1),
+  statusRawContainer:{
+    flexDirection:'row',
+    marginHorizontal:width(1)
   },
-  productContainer: {
-    alignItems: 'center',
+  productContainer:{
+    alignItems:'center'
   },
-  bottomContainer: {
-    width: width(94),
-    alignSelf: 'center',
-  },
+  bottomContainer:{
+    width:width(94),
+    alignSelf:'center'
+  }
+
 });
