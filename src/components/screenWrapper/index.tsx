@@ -1,8 +1,14 @@
 import React from 'react';
-import { ImageBackground, SafeAreaView, StatusBar, View, StatusBarStyle  } from 'react-native';
+import {
+  ImageBackground,
+  SafeAreaView,
+  StatusBar,
+  View,
+  StatusBarStyle,
+} from 'react-native';
 import styles from './styles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { useIsFocused} from '@react-navigation/native';
+import { useIsFocused } from '@react-navigation/native';
 import AppColors from '../../utils/AppColors';
 
 type wrapperProps = {
@@ -15,14 +21,14 @@ type wrapperProps = {
   headerUnScrollable?: () => void,
   footerUnScrollable?: () => void,
   barStyle: StatusBarStyle,
-}
+};
 const ScreenWrapper = ({
   children,
-  statusBarColor = AppColors.white,
+  statusBarColor = AppColors.black,
   transclucent = false,
   scrollEnabled = false,
   backgroundImage,
-  backgroundColor = AppColors.white,
+  backgroundColor = AppColors.black,
   headerUnScrollable = () => null,
   footerUnScrollable = () => null,
   barStyle = 'dark-content',
@@ -34,13 +40,13 @@ const ScreenWrapper = ({
   const content = () => {
     return (
       <View style={[styles.container, { backgroundColor: backgroundColor }]}>
-           <FocusAwareStatusBar
-    props={{
-      barStyle: barStyle,
-      backgroundColor: statusBarColor,
-      transclucent: transclucent
-    }}
-  />
+        <FocusAwareStatusBar
+          props={{
+            barStyle: barStyle,
+            backgroundColor: statusBarColor,
+            transclucent: transclucent,
+          }}
+        />
         {!transclucent && (
           <SafeAreaView
             style={(styles.container, { backgroundColor: statusBarColor })}

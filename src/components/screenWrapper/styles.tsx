@@ -5,12 +5,12 @@ import { height } from '../../utils/Dimension';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: AppColors.white
+    backgroundColor: AppColors.black,
   },
   scroll: {
     flex: 1,
     paddingBottom: height(1.5),
   },
-  contentContainer: {}
+  contentContainer: {},
 });
 export default styles;

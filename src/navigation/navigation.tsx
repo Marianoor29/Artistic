@@ -4,14 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import MyTabs from './bottom';
 import ScreenNames from './routes';
 import { Login, SignUp } from '../screens/auth';
-import { useAppSelector} from '../redux/store/hook'
+import { useAppSelector } from '../redux/store/hook';
 import { Loader } from '../components';
 
 const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
-  const isLoggedIn = useAppSelector((state) => state.user.isLoggedIn)
-  console.log(isLoggedIn, 'isLoggedIn')
+  const isLoggedIn = useAppSelector(state => state.user.isLoggedIn);
+  console.log(isLoggedIn, 'isLoggedIn');
   return (
     <NavigationContainer>
       <Loader />
@@ -29,18 +29,16 @@ const MainNavigation = () => {
             options={{ headerShown: false }}
             component={SignUp}
           />
-        </Stack.Navigator> 
+        </Stack.Navigator>
       ) : (
-        <Stack.Navigator
-          screenOptions={{ headerShown: false }}> 
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen
             name={ScreenNames.HOMEBASE}
             options={{ headerShown: false }}
             component={MyTabs}
           />
         </Stack.Navigator>
-      )} 
-
+      )}
     </NavigationContainer>
   );
 };

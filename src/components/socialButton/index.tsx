@@ -1,28 +1,28 @@
 import React from 'react';
-import {ActivityIndicator, Image, TouchableOpacity} from 'react-native';
+import { ActivityIndicator, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import AppColors from '../../utils/AppColors';
 
-type buttonProps={
+type buttonProps = {
   onPress?: () => void,
   disabled?: boolean,
   isLoading?: boolean,
   loaderColor?: string,
-  activeOpacity?:  number,
+  activeOpacity?: number,
   containerStyle?: object,
   iconStyle?: object,
   source?: any,
-}
+};
 const SocialButton = ({
   onPress = () => null,
   disabled = false,
   isLoading = false,
-  loaderColor = AppColors.white,
+  loaderColor = AppColors.black,
   activeOpacity = 0.7,
   containerStyle = {},
   iconStyle = {},
   source,
-}: buttonProps ) => {
+}: buttonProps) => {
   return (
     <TouchableOpacity
       onPress={onPress}
